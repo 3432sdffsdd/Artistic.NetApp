@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build: ./frontend
+    ports: 
+     - "8080:80"
+    container_name: angular-frontend
+    depends_on:
+     -  backend
+
+  backend: 
+    build: ./backend/src/Conduit
+    ports:
+     - "5000:8080"
+    container_name: conduit-backend
+
+   
